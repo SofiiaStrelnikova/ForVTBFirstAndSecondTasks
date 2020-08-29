@@ -28,7 +28,7 @@ public class Main {
             listStrings.add(reader.getScanner().nextLine());
         }
 
-        if (StringsComparator.checkAndOutDuplicates(listStrings))
+        if (StringDuplicatesSearcher.checkAndOutDuplicates(listStrings))
             System.out.println("All of entries are different!");
     }
 
