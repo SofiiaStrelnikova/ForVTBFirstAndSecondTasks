@@ -3,9 +3,13 @@ package com.epam;
 import java.util.Scanner;
 
 public class Reader {
-    public static Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
-    public static int readAnInteger() {
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public int readAnInteger() {
         int a;
 
         while (true) {
@@ -21,7 +25,7 @@ public class Reader {
         return a;
     }
 
-    public static int readNaturalNumber() {
+    public int readNaturalNumber() {
         int a;
 
         while (true) {

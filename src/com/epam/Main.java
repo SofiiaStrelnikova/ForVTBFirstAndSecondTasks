@@ -3,13 +3,13 @@ package com.epam;
 import java.util.*;
 
 public class Main {
-    public static Scanner scanner = new Scanner(System.in);
+    public static Reader reader = new Reader();
 
     public static void main(String[] args) {
         while (true) {
             System.out.print("To check if all of entries in ArrayList are different enter \"1\", " +
                     "to add two integers enter \"2\":");
-            String input = scanner.nextLine();
+            String input = reader.getScanner().nextLine();
 
             switch (input) {
                 case "1" -> lookForDuplicatesInArrayListOfStrings();
@@ -21,19 +21,19 @@ public class Main {
 
     private static void lookForDuplicatesInArrayListOfStrings() {
         ArrayList<String> listStrings = new ArrayList<>();
-        int sizeOfArray = Reader.readNaturalNumber();
+        int sizeOfArray = reader.readNaturalNumber();
 
         for (int i = 0; i < sizeOfArray; ++i) {
             System.out.print("Enter a string:");
-            listStrings.add(scanner.nextLine());
+            listStrings.add(reader.getScanner().nextLine());
         }
 
-        if (StringsComparator.compareStringsInArray(listStrings))
+        if (StringsComparator.checkAndOutDuplicates(listStrings))
             System.out.println("All of entries are different!");
     }
 
     private static void addTwoIntegers() {
-        int a = Reader.readAnInteger(), b = Reader.readAnInteger();
+        int a = reader.readAnInteger(), b = reader.readAnInteger();
 
         try {
             System.out.println("Result of adding is " + IntegersAdder.sum(a, b));
