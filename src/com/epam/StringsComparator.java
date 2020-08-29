@@ -7,7 +7,7 @@ public class StringsComparator {
     public static boolean compareStringsInArray(ArrayList<String> listStrings) {
         HashSet<String> firstOccurrences = new HashSet<>(), duplicates = new HashSet<>();
 
-        for (String currentString : listStrings) {
+        for (var currentString : listStrings) {
             if (!firstOccurrences.contains(currentString))
                 firstOccurrences.add(currentString);
             else
@@ -16,8 +16,8 @@ public class StringsComparator {
 
         if (duplicates.size() > 0) {
             System.out.println("Equal strings are:");
-            for (var value : duplicates) {
-                System.out.println(value);
+            for (var duplicate : duplicates) {
+                System.out.println(duplicate);
             }
         }
 
